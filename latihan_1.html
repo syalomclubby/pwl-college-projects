@@ -1,55 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portofolio</title>
-</head>
-<body>
-    <header>
-        <h1>Syalom Layezar</h1>
-        <p>Web Developer | Designer | Freelancer</p>
-        <hr>
-    </header>
-    <section>
-        <h2>Tentang Saya</h2>
-        <p>Saya adalah seorang pengembang web yang berfokus pada teknologi modern dan desain yang responsif.</p>
-    </section>
-    <section>
-        <h2>Pendidikan</h2>
-        <ul>
-            <li>Jurusan Teknik Komputer dan Jaringan - SMK Kristen Immanuel</li>
-            <li>Sarjana Komputer - Institut Teknologi dan Bisnis Sabda Setia</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Pengalaman Kerja</h2>
-        <ul>
-            <li>Frotend Developer - PT. Kreasi Putra Hotama (magang 2025)</li>
-            <li>Freelance Web Template Developer - TemplateMonster (2025 - Sekarang)</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Keahlian</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript</li>
-            <li>Tailwind</li>
-            <li>PHP & Laravel</li>
-            <li>MySQL</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Portofolio</h2>
-        <img src="images/pertemuan_2/sylify.png" alt="Portofolio Saya" width="20%"></br>
-        <a href="https://frontsyl.vercel.app" target="_blank">Kunjungi Real Portofolio Saya</a>
-    </section>
-    <section>
-        <h2>Kontak</h2>
-        <p>Email: syalomlayezar@itbss.ac.id</p>
-        <p>LinkedIn: linkedin.com/in/syalom-layezar</p>
-        <p>GitHub: github.com/syalomclubby</p>
-    </section>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio — Syalom Layezar</title>
+    <style>
+      :root {
+        --bg: #f6fafc;
+        --card: #ffffff;
+        --text: #072033;
+        --muted: #6b7280;
+        --accent: #0b3048;
+        --border: #e7edf3;
+        --radius: 10px;
+        --glass: rgba(11, 48, 72, 0.04);
+      }
 
-    <a href="latihan_2_advanced.html">Latihan Jadwal Kuliah</a>
-</body>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 36px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 950px;
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 34px;
+        border: 1px solid var(--border);
+        box-shadow: 0 8px 20px rgba(7, 20, 34, 0.04);
+      }
+
+      header .title {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .sub {
+        margin: 6px 0 14px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .card-section {
+        background: transparent;
+        border-radius: 8px;
+        padding: 0;
+      }
+
+      section h2 {
+        margin: 0 0 8px 0;
+        font-size: 15px;
+        color: var(--accent);
+      }
+      p,
+      li {
+        color: var(--text);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      ul {
+        padding-left: 18px;
+        margin: 8px 0;
+      }
+      a.button {
+        display: inline-block;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #fbfdff;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .meta {
+        background: #fbfdff;
+        border: 1px solid var(--border);
+        padding: 12px;
+        border-radius: 8px;
+      }
+      .meta p {
+        margin: 8px 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .portfolio-img {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #fff;
+        padding: 12px;
+        display: block;
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <header>
+          <div class="title">
+            <div class="avatar">
+              <img src="images/pertemuan_2/avatar.png" alt="avatar" />
+            </div>
+            <div>
+              <h1>Syalom Layezar</h1>
+              <div class="sub">Web Developer | Designer | Freelancer</div>
+              <hr
+                style="
+                  border: none;
+                  border-top: 1px solid var(--border);
+                  margin: 12px 0 0;
+                "
+              />
+            </div>
+          </div>
+        </header>
+
+        <main style="margin-top: 18px">
+          <div class="grid">
+            <div>
+              <section class="card-section">
+                <h2>Tentang Saya</h2>
+                <p>
+                  Saya adalah seorang pengembang web yang berfokus pada
+                  teknologi modern dan desain responsif. Saya suka membangun
+                  antarmuka (UI) yang clean, minimalist, dan mudah digunakan.
+                </p>
+              </section>
+
+              <section class="card-section" style="margin-top: 18px">
+                <h2>Pendidikan</h2>
+                <ul>
+                  <li>
+                    Jurusan Teknik Komputer dan Jaringan — SMK Kristen Immanuel
+                  </li>
+                  <li>
+                    Sarjana Komputer — Institut Teknologi dan Bisnis Sabda Setia
+                  </li>
+                </ul>
+              </section>
+
+              <section class="card-section" style="margin-top: 18px">
+                <h2>Pengalaman Kerja</h2>
+                <ul>
+                  <li>
+                    Frontend Developer — PT. Kreasi Putra Hotama (magang 2025)
+                  </li>
+                  <li>
+                    Freelance Web Template Developer — TemplateMonster (2025 —
+                    sekarang)
+                  </li>
+                </ul>
+              </section>
+
+              <section class="card-section" style="margin-top: 18px">
+                <h2>Keahlian</h2>
+                <ul>
+                  <li>HTML, CSS, JavaScript</li>
+                  <li>Tailwind CSS</li>
+                  <li>PHP &amp; Laravel</li>
+                  <li>MySQL</li>
+                </ul>
+              </section>
+
+              <section class="card-section" style="margin-top: 18px">
+                <h2>Portofolio</h2>
+                <img
+                  class="portfolio-img"
+                  src="images/pertemuan_2/sylify.png"
+                  alt="Portofolio Saya"
+                />
+                <p style="margin-top: 10px">
+                  <a
+                    class="button"
+                    href="https://frontsyl.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    >Kunjungi Portofolio Detail</a
+                  >
+                </p>
+              </section>
+            </div>
+
+            <aside class="meta">
+              <h2>Kontak</h2>
+              <p>
+                Email:
+                <a href="mailto:syalomlayezar@itbss.ac.id"
+                  >syalomlayezar@itbss.ac.id</a
+                >
+              </p>
+              <p>
+                LinkedIn:
+                <a
+                  href="https://linkedin.com/in/syalom-layezar"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/in/syalom-layezar</a
+                >
+              </p>
+              <p>
+                GitHub:
+                <a
+                  href="https://github.com/syalomclubby"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/syalomclubby</a
+                >
+              </p>
+
+              <div style="margin-top: 12px">
+                <a class="button" href="latihan_2.html"
+                  >Latihan Jadwal Kuliah</a
+                >
+              </div>
+            </aside>
+          </div>
+        </main>
+
+        <footer>&copy; 2025 Syalom Layezar.</footer>
+      </div>
+    </div>
+  </body>
 </html>
