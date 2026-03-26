@@ -1,157 +1,381 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>latihan 1 - HTML5</title>
-</head>
-<body>
+    <style>
+      :root {
+        --bg: #f6fafc;
+        --card: #ffffff;
+        --text: #072033;
+        --muted: #6b7280;
+        --accent: #0b3048;
+        --border: #e7edf3;
+        --radius: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      body {
+        padding: 36px;
+      }
+
+      header,
+      nav,
+      section,
+      footer {
+        width: 100%;
+        max-width: 950px;
+        margin: 0 auto 20px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 8px 20px rgba(7, 20, 34, 0.04);
+      }
+
+      header,
+      section,
+      footer {
+        padding: 24px;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      header p {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      nav {
+        padding: 14px 18px;
+        text-align: center;
+      }
+
+      nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 12px;
+        display: inline-block;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+        font-size: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--border);
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f1f5f9;
+        font-weight: 700;
+      }
+
+      /* FORM INPUT */
+      input,
+      select,
+      textarea {
+        font: inherit;
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 6px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        outline: none;
+        background: #fff;
+        color: var(--text);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+      }
+
+      input[type="radio"],
+      input[type="checkbox"],
+      input[type="range"],
+      input[type="submit"],
+      input[type="reset"] {
+        width: auto;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 6px;
+        accent-color: var(--accent);
+      }
+
+      input[type="range"] {
+        accent-color: var(--accent);
+        padding: 0;
+      }
+
+      input[type="file"] {
+        padding: 8px;
+      }
+
+      input[type="file"]::file-selector-button {
+        border: 1px solid var(--border);
+        background: #eaf2f8;
+        color: var(--accent);
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-right: 12px;
+        font-weight: 600;
+      }
+
+      input[type="file"]::file-selector-button:hover {
+        background: #ddeaf3;
+      }
+
+      /* BUTTON */
+      button,
+      input[type="submit"],
+      input[type="reset"] {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 600;
+      }
+
+      input[type="submit"] {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      input[type="reset"] {
+        background: #e5eef5;
+        color: var(--text);
+        margin-left: 8px;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .form-table,
+      .form-table td {
+        border: none;
+      }
+
+      .form-table td {
+        padding: 8px 12px 8px 0;
+      }
+
+      .form-table td:first-child {
+        width: 220px;
+        font-weight: 600;
+      }
+
+      .form-table td:nth-child(2) {
+        width: 18px;
+      }
+
+      .form-table td:last-child {
+        width: auto;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 16px;
+        }
+
+        header,
+        nav,
+        section,
+        footer {
+          margin-bottom: 16px;
+        }
+
+        header,
+        section,
+        footer {
+          padding: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <h1>Selamat Datang</h1>
-        <p>Belajar elemen semantik HTML5</p>
+      <h1>Selamat Datang</h1>
+      <p>Belajar elemen semantik HTML5</p>
     </header>
-    
+
     <nav>
-        <a href="#tentang">Tentang</a> |
-        <a href="#kursus">Kursus</a> |
-        <a href="#kontak">Kontak</a> |
-        <a href="#daftar">Daftar</a>
+      <a href="#tentang">Tentang</a> | <a href="#kursus">Kursus</a> |
+      <a href="#kontak">Kontak</a> |
+      <a href="#daftar">Daftar</a>
     </nav>
 
     <section id="tentang">
-        <h2>Tentang Halaman Ini</h2>
-        <p>Ini merupakan section untuk menu Tentang</p>
+      <h2>Tentang Halaman Ini</h2>
+      <p>Ini merupakan section untuk menu Tentang</p>
     </section>
 
     <section id="kursus">
-        <h2>Daftar Kursus</h2>
-        <table border="1">
-            <tr>
-                <th>No</th>
-                <th>Nama Kursus</th>
-                <th>Durasi</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Dasar HTML & CSS</td>
-                <td>4 Minggu</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>JavaScript Fundamental</td>
-                <td>6 Minggu</td>
-            </tr>
-        </table>
+      <h2>Daftar Kursus</h2>
+      <table border="1">
+        <tr>
+          <th>No</th>
+          <th>Nama Kursus</th>
+          <th>Durasi</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Dasar HTML & CSS</td>
+          <td>4 Minggu</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>JavaScript Fundamental</td>
+          <td>6 Minggu</td>
+        </tr>
+      </table>
     </section>
 
     <section id="kontak">
-        <h2>Hubungi Kami</h2>
-        <form action="">
-            <label for="">Nama: </label>
-            <input type="email"></form></br>
-            <label for="">Email: </label>
-            <input type="text" name="" id=""></br></br>
-            <label for="">Pesan:</label></br>
-            <textarea name="" id="" rows="5"></textarea></br></br>
-            <button>Kirim</button>
-        </form>
+      <h2>Hubungi Kami</h2>
+      <form action="">
+        <label for="">Nama: </label>
+        <input type="email" /><br />
+        <label for="">Email: </label>
+        <input type="text" name="" id="" /><br /><br />
+        <label for="">Pesan:</label><br />
+        <textarea name="" id="" rows="5"></textarea><br /><br />
+        <button>Kirim</button>
+      </form>
     </section>
 
     <section id="daftar">
-        <h2>Form Pendaftaran Mahasiswa Baru </br> Kampus ABC</h2>
-        <form action="proses.php" method="POST">
-            <table border="0" cellpadding="5" cellspacing="0">
-                <tr>
-                    <td>Nama Lengkap</td>
-                    <td>:</td>
-                    <td><input type="text" name="nama" required></td>
-                </tr>
-                <tr>
-                    <td>Tempat/Tanggal Lahir</td>
-                    <td>:</td>
-                    <td>
-                        <input type="text" name="tempat" placeholder="Tempat">
-                        <input type="date" name="tanggal">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jenis Kelamin</td>
-                    <td>:</td>
-                    <td>
-                        <input type="radio" name="jk" value="L"> Laki-laki
-                        <input type="radio" name="jk" value="P"> Perempuan
-                    </td>
-                </tr>
-                <tr>
-                    <td>Agama</td>
-                    <td>:</td>
-                    <td>
-                        <select name="agama">
-                            <option value="islam">Islam</option>
-                            <option value="kristen">Kristen</option>
-                            <option value="kristen">Katolik</option>
-                            <option value="kristen">Buddha</option>
-                            <option value="kristen">Hindu</option>
-                            <option value="kristen">Khonghucu</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alamat</td>
-                    <td>:</td>
-                    <td><textarea name="alamat" rows="3"></textarea></td>
-                </tr>
-                <tr>
-                    <td>Prodi</td>
-                    <td>:</td>
-                    <td>
-                        <select>
-                            <option value="sti">Sistem dan Teknologi Informasi</option>
-                            <option value="bd">Bisnis Digital</option>
-                            <option value="kwu">Kewirausahaan</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ijazah</td>
-                    <td>:</td>
-                    <td><input type="file"></td>
-                </tr>
-                <tr>
-                    <td>Hobi</td>
-                    <td>:</td>
-                    <td>
-                        <input type="checkbox" id="hobi1" name="hobi1" value="game">
-                        <label for="hobi1"> Bermain Game</label><br>
-                        <input type="checkbox" id="hobi2" name="hobi2" value="sport">
-                        <label for="hobi2"> Olahraga</label><br>
-                        <input type="checkbox" id="hobi3" name="hobi3" value="music">
-                        <label for="hobi3"> Bermain Musik</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ketertarikan</td>
-                    <td>:</td>
-                    <td>
-                        0
-                        <input type="range">
-                        100
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Daftar">
-                        <input type="reset" value="Clear">
-                    </td>
-                </tr>
-            </table>
-        </form>
+      <h2>
+        Form Pendaftaran Mahasiswa Baru <br />
+        Kampus ABC
+      </h2>
+      <form class="form-table" action="#" method="POST">
+        <table border="0" cellpadding="5" cellspacing="0">
+          <tr>
+            <td>Nama Lengkap</td>
+            <td>:</td>
+            <td><input type="text" name="nama" required /></td>
+          </tr>
+          <tr>
+            <td>Tempat/Tanggal Lahir</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="tempat" placeholder="Tempat" />
+              <input type="date" name="tanggal" />
+            </td>
+          </tr>
+          <tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td>
+              <input type="radio" name="jk" value="L" /> Laki-laki
+              <input type="radio" name="jk" value="P" /> Perempuan
+            </td>
+          </tr>
+          <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td><textarea name="alamat" rows="3"></textarea></td>
+          </tr>
+          <tr>
+            <td>Prodi</td>
+            <td>:</td>
+            <td>
+              <select>
+                <option value="sti">Sistem dan Teknologi Informasi</option>
+                <option value="bd">Bisnis Digital</option>
+                <option value="kwu">Kewirausahaan</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Ketertarikan Prodi</td>
+            <td>:</td>
+            <td>
+              0
+              <input type="range" />
+              100
+            </td>
+          </tr>
+          <tr>
+            <td>Ijazah</td>
+            <td>:</td>
+            <td><input type="file" /></td>
+          </tr>
+          <tr>
+            <td>Hobi</td>
+            <td>:</td>
+            <td>
+              <input type="checkbox" id="hobi1" name="hobi1" value="game" />
+              <label for="hobi1"> Bermain Game</label><br />
+              <input type="checkbox" id="hobi2" name="hobi2" value="sport" />
+              <label for="hobi2"> Olahraga</label><br />
+              <input type="checkbox" id="hobi3" name="hobi3" value="music" />
+              <label for="hobi3"> Bermain Musik</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <input type="submit" value="Daftar" />
+              <input type="reset" value="Clear" />
+            </td>
+          </tr>
+        </table>
+      </form>
     </section>
 
-     <footer>
-        <p>&copy; 2026 oleh Syalom Layezar</p>
-     </footer>
-</body>
+    <footer>
+      <p>&copy; 2026 oleh Syalom Layezar</p>
+    </footer>
+  </body>
 </html>
