@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 4</title>
+</head>
+<body>
+    <h2>Perulangan Angka</h2>
+
+    <input type="number" id="batas" placeholder="Masukkan angka">
+    <button onclick="tampilkanAngka()">Tampilkan</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function tampilkanAngka() {
+            let batas = parseInt(document.getElementById("batas").value);
+            let output = "";
+
+            for (let i = 1; i <= batas; i++) {
+                output += i + " ";
+            }
+            document.getElementById("hasil").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

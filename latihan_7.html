@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 1</title>
+</head>
+<body>
+    <h2>Latihan Sapaan</h2>
+
+    <input type="text" id="nama" placeholder="Masukkan nama">
+    <button onclick="sapaUser()">Sapa</button>
+    
+    <p id="hasil"></p>
+
+    <script>
+        function sapaUser() {
+            let nama = document.getElementById("nama").value;
+            document.getElementById("hasil").innerHTML = "Halo, " + nama + "!";
+        }
+    </script>
+</body>
+</html>

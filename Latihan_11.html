@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 5</title>
+</head>
+<body>
+    <h2>Hitung Diskon Belanja</h2>
+
+    <input type="number" id="belanja" placeholder="Masukkan total belanja">
+    <button onclick="hitungDiskon()">Hitung</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function hitungDiskon() {
+            let belanja = parseInt(document.getElementById("belanja").value);
+            let diskon = 0;
+            let totalBayar = belanja;
+
+            if (belanja >= 100000) {
+                diskon = belanja * 0.1;
+                totalBayar = belanja - diskon;
+            }
+            document.getElementById("hasil").innerHTML = 
+                "Diskon: Rp " + diskon.toLocaleString('id') + "<br>Total Bayar: Rp " + totalBayar.toLocaleString('id');
+        }
+    </script>
+</body>
+</html>

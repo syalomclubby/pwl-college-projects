@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3</title>
+</head>
+<body>
+    <h2>Kalkulator Penjumlahan</h2>
+
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+    <button onclick="jumlahkan()">Jumlahkan</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function jumlahkan() {
+            let angka1 = parseInt(document.getElementById("angka1").value);
+            let angka2 = parseInt(document.getElementById("angka2").value);
+            let hasil = angka1 + angka2;
+
+            document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>
