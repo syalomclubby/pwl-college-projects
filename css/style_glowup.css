@@ -131,7 +131,7 @@ p {
 @keyframes bounce {
   40% {
     transform: translateY(-30px);
-  },
+  }
   60% {
     transform: translateY(-10px);
   }
